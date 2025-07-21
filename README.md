@@ -56,3 +56,61 @@ int compararElementos(void *datoA, void *datoB) {
     return 2;              // Igual
 }
 ```
+# Ejemplo de Salida
+```bash
+Pre-orden:
+21
+3
+1
+9
+18
+12
+25
+23
+In-orden:
+1
+3
+9
+12
+18
+21
+23
+25
+Post-orden:
+1
+12
+18
+9
+3
+23
+25
+21
+In-orden después de eliminar 3:
+1
+9
+12
+18
+21
+23
+25
+Resultado de búsqueda (18): 1
+```
+# Requisitos
+- **Compilador C (GCC recomendado)**
+- **Sistema operativo Unix/Linux o Windows con WSL**
+  
+# Limitaciones y Mejoras Futuras
+- **Insertar en árbol vacío:**
+
+- - Actualmente requiere crear manualmente el primer nodo
+
+- - Solución propuesta:
+    ```bash
+    void insertarEnArbol(NodoPtr *raiz, ...) {
+    if (!*raiz) *raiz = crearNodo(dato);
+    ```
+- **Liberación de memoria:**
+- - Agregar función liberarArbol con callback:
+     ```bash
+    void liberarArbol(NodoPtr raiz, void(*liberarDato)(void*));
+    ```

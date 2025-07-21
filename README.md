@@ -33,7 +33,7 @@ Gestión de memoria segura
 ```
 # Funciones Implementadas
 
-```bash
+```c
 // Creación
 NodoPtr crearNodo(void * dato);
 
@@ -49,7 +49,7 @@ void postOrden(NodoPtr raiz, void(*mostrar)(void *));
 ```
 # Sistema de Comparación
 La función de comparación debe seguir esta convención:
-```bash
+```c
 int compararElementos(void *datoA, void *datoB) {
     if (A > B) return 0;   // Mayor
     if (A < B) return 1;   // Menor
@@ -105,12 +105,12 @@ Resultado de búsqueda (18): 1
 - - Actualmente requiere crear manualmente el primer nodo
 
 - - Solución propuesta:
-    ```bash
+    ```c
     void insertarEnArbol(NodoPtr *raiz, ...) {
     if (!*raiz) *raiz = crearNodo(dato);
     ```
 - **Liberación de memoria:**
 - - Agregar función liberarArbol con callback:
-     ```bash
+     ```c
     void liberarArbol(NodoPtr raiz, void(*liberarDato)(void*));
     ```
